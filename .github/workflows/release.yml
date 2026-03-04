@@ -1,0 +1,96 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            args: "--target x86_64-apple-darwin"
+          - os: macos-latest
+            args: "--target aarch64-apple-darwin"
+          - os: windows-latest
+            args: ""
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Add Rust targets (macOS)
+        if: startsWith(matrix.os, 'macos')
+        run: |
+          rustup target add x86_64-apple-darwin
+          rustup target add aarch64-apple-darwin
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build & Release (Tauri v2)
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: "ClickPro ${{ github.ref_name }}"
+          releaseDraft: false
+          prerelease: false
+          args: ${{ matrix.args }}
+
+      - name: List release artifacts (debug)
+        shell: bash
+        run: |
+          find src-tauri/target -maxdepth 6 -type f \( \
+            -name "*.dmg" -o -name "*.exe" -o -name "*.msi" \
+            -o -name "*.app.tar.gz" -o -name "*.tar.gz.sig" \
+            -o -name "*.exe.sig" -o -name "*.msi.sig" \
+          \) 2>/dev/null | sort | head -50
+
+      - name: Validate release signatures
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Assets published for ${GITHUB_REF_NAME}:"
+          ASSETS="$(gh release view "${GITHUB_REF_NAME}" --json assets --jq '.assets[].name')"
+          echo "$ASSETS"
+          if [ "$RUNNER_OS" = "macOS" ]; then
+            if echo "${{ matrix.args }}" | grep -q "x86_64"; then
+              ARCH="x64"
+            else
+              ARCH="aarch64"
+            fi
+            SIG="ClickPro_${ARCH}.app.tar.gz.sig"
+            if echo "$ASSETS" | grep -Fxq "$SIG"; then
+              echo "OK: $SIG"
+            else
+              echo "MISSING: $SIG" >&2
+              exit 1
+            fi
+          else
+            if echo "$ASSETS" | grep -qE '\.(exe|msi)\.sig$'; then
+              echo "OK: Windows installer signature found"
+            else
+              echo "MISSING: Windows .sig" >&2
+              exit 1
+            fi
+          fi
