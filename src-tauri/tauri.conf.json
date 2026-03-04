@@ -39,8 +39,8 @@
       "icons/icon.ico"
     ],
     "publisher": "Potencore",
-    "shortDescription": "Gestión local de empresa — ClickPro",
-    "longDescription": "ClickPro es una aplicación de escritorio local para gestión de facturas, presupuestos y clientes. Datos almacenados en SQLite en tu equipo.",
+    "shortDescription": "Gesti\u00f3n local de empresa \u2014 ClickPro",
+    "longDescription": "ClickPro es una aplicaci\u00f3n de escritorio local para gesti\u00f3n de facturas, presupuestos y clientes. Datos almacenados en SQLite en tu equipo.",
     "windows": {
       "certificateThumbprint": null,
       "digestAlgorithm": "sha256",
@@ -64,6 +64,13 @@
     "fs": {},
     "shell": {
       "open": true
+    },
+    "updater": {
+      "endpoints": [
+        "https://github.com/reservaselrinconcito-stack/clickpro-app/releases/latest/download/latest.json"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEMxQjZDQTY5RjNDMTkzNUQKUldSZGs4SHphY3Eyd1FidjlUTTNWbzJDVEJWUFFMbFNtUW11d3VZbGw3TWFBS255a0dDY1RuVG8K"
     }
   }
 }
