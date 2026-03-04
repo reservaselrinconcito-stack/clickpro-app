@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" fill="none">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="260" y2="56" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+  <g transform="translate(4,3) scale(0.5)">
+    <ellipse cx="50" cy="50" rx="46" ry="19" stroke="url(#g)" stroke-width="2" stroke-dasharray="7 4" opacity=".7" transform="rotate(-22 50 50)"/>
+    <circle cx="50" cy="50" r="16" fill="url(#g)"/>
+    <circle cx="50" cy="50" r="5" fill="white" opacity=".55"/>
+  </g>
+  <text x="58" y="32" font-family="'Trebuchet MS',sans-serif" font-size="20" font-weight="700" letter-spacing="2.5" fill="#ffffff">OPTIMUS</text>
+  <text x="59" y="46" font-family="'Trebuchet MS',sans-serif" font-size="8" letter-spacing="4" fill="#a78bfa" opacity=".85">HUB · ECOSYSTEM</text>
+</svg>

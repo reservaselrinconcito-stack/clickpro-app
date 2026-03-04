@@ -1,0 +1,15 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nexora-grad" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5" />
+      <stop offset="1" stop-color="#7C5CFF" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="16" fill="url(#nexora-grad)"/>
+  <ellipse cx="50" cy="50" rx="36" ry="14" fill="none" stroke="url(#nexora-grad)" stroke-width="2.5" transform="rotate(30 50 50)" opacity="0.4"/>
+  <ellipse cx="50" cy="50" rx="36" ry="14" fill="none" stroke="url(#nexora-grad)" stroke-width="2.5" transform="rotate(90 50 50)" opacity="0.4"/>
+  <ellipse cx="50" cy="50" rx="36" ry="14" fill="none" stroke="url(#nexora-grad)" stroke-width="2.5" transform="rotate(150 50 50)" opacity="0.4"/>
+  <circle cx="18" cy="31" r="3.5" fill="#7C5CFF"/>
+  <circle cx="82" cy="69" r="3.5" fill="#4F46E5"/>
+  <circle cx="50" cy="14" r="3.5" fill="#4F46E5"/>
+</svg>

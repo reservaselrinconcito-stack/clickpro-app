@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" fill="none">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#EC4899"/><stop offset="100%" stop-color="#A855F7"/></linearGradient></defs>
+  <g transform="translate(5,3) scale(0.5)">
+    <path d="M50 12 C50 12 52.5 35 64 39.5 C75.5 44 90 44 90 44 C90 44 75.5 44 64 48.5 C52.5 53 50 76 50 76 C50 76 47.5 53 36 48.5 C24.5 44 10 44 10 44 C10 44 24.5 44 36 39.5 C47.5 35 50 12 50 12 Z" fill="url(#g)"/>
+    <path d="M78 18 C78 18 79 26 82 27 C85 28 92 27.5 92 27.5 C92 27.5 85 27.5 82 29 C79 30.5 78 37 78 37 C78 37 77 30.5 74 29 C71 27.5 64 27.5 64 27.5 C64 27.5 71 28 74 27 C77 26 78 18 78 18 Z" fill="url(#g)" opacity=".7"/>
+  </g>
+  <text x="60" y="30" font-family="'Trebuchet MS',sans-serif" font-size="18" font-weight="700" fill="#1c2140">Glow<tspan fill="url(#g)">Pro</tspan></text>
+  <text x="61" y="46" font-family="'Trebuchet MS',sans-serif" font-size="8.5" letter-spacing="2" fill="#6b7280">BELLEZA · ESTÉTICA</text>
+</svg>

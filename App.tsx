@@ -91,6 +91,11 @@ const AppRoutes: React.FC = () => {
             <Route path="/settings/email-templates" element={<EmailTemplatesSettings />} />
             <Route path="/settings/email-templates/:id" element={<EmailTemplateEditorPage />} />
             <Route path="/import" element={<ImportWizard />} />
+            {extraRoutes
+              .filter(r => (r as any).wrapInLayout !== false)
+              .map((r: any) => (
+                <Route key={r.path} path={r.path} element={r.element} />
+              ))}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

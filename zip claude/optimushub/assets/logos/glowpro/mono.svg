@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" fill="none">
+  <g transform="translate(5,3) scale(0.5)">
+    <path d="M50 12 C50 12 52.5 35 64 39.5 C75.5 44 90 44 90 44 C90 44 75.5 44 64 48.5 C52.5 53 50 76 50 76 C50 76 47.5 53 36 48.5 C24.5 44 10 44 10 44 C10 44 24.5 44 36 39.5 C47.5 35 50 12 50 12 Z" fill="#111"/>
+  </g>
+  <text x="60" y="30" font-family="'Trebuchet MS',sans-serif" font-size="18" font-weight="700" fill="#111">GlowPro</text>
+  <text x="61" y="46" font-family="'Trebuchet MS',sans-serif" font-size="8.5" letter-spacing="2" fill="#555">BELLEZA · ESTÉTICA</text>
+</svg>

@@ -1,0 +1,26 @@
+
+> contikpro-core@2.0.0 tauri:build:debug
+> tauri build --debug
+
+
+> contikpro-core@2.0.0 build
+> vite build
+
+vite v6.4.1 building for production...
+transforming...
+✓ 2695 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                               1.92 kB │ gzip:   0.82 kB
+dist/assets/index-BLmB7nQ1.css               65.05 kB │ gzip:  11.25 kB
+dist/assets/core-DlQNAQKj.js                  0.09 kB │ gzip:   0.11 kB
+dist/assets/index-DQAAWqU8.js                 0.16 kB │ gzip:   0.16 kB
+dist/assets/whatsappRenderer-GojSy5c0.js      0.66 kB │ gzip:   0.43 kB
+dist/assets/sqlite-BWLA5Mdh.js                2.42 kB │ gzip:   0.94 kB
+dist/assets/DesktopBackup-B3ASfaHC.js         4.73 kB │ gzip:   1.74 kB
+dist/assets/DataFolderSetup-CwZ6JIEv.js      10.64 kB │ gzip:   3.80 kB
+dist/assets/purify.es-B9ZVCkUG.js            22.64 kB │ gzip:   8.75 kB
+dist/assets/index.es-COA-yYBv.js            159.38 kB │ gzip:  53.43 kB
+dist/assets/html2canvas.esm-B0tyYwQk.js     202.36 kB │ gzip:  48.04 kB
+dist/assets/index-BVOnYA1K.js             1,373.95 kB │ gzip: 417.48 kB
+✓ built in 15.29s

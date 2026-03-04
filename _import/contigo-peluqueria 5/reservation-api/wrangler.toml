@@ -1,0 +1,30 @@
+name = "contigo-reservation-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ── Variables de entorno (no secretas) ────────────────────────────────────────
+[vars]
+WORKER_VERSION = "2.4.1"
+# Dominios permitidos para CORS (el dominio de la web del negocio)
+# Separados por coma. Edita antes de deployar.
+ALLOWED_ORIGINS = "https://mipeluqueria.com,https://www.mipeluqueria.com"
+
+# ── D1 Database ────────────────────────────────────────────────────────────────
+# 1. Crear la BD: npx wrangler d1 create contigo-peluqueria-data
+# 2. Copiar el database_id al campo de abajo
+# 3. Aplicar schema: npx wrangler d1 execute contigo-peluqueria-data \
+#      --file=migrations/d1-schema.sql --remote
+[[d1_databases]]
+binding = "DB"
+database_name = "contigo-peluqueria-data"
+database_id   = "REEMPLAZA_CON_TU_D1_DATABASE_ID"
+
+# ── Secrets (configurar con: wrangler secret put NOMBRE) ─────────────────────
+# API_SECRET — clave para que la app local lea mensajes del D1 (Fase 2B)
+#   npx wrangler secret put API_SECRET
+
+# ── Routes opcionales (si tienes dominio propio) ──────────────────────────────
+# [route]
+# pattern = "api.mipeluqueria.com/*"
+# zone_name = "mipeluqueria.com"

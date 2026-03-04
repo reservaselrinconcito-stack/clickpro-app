@@ -1,0 +1,5 @@
+# Specific SPA fallback for the demo app
+/contikpro/demo/* /contikpro/demo/index.html 200
+
+# Global fallback for the landing site
+/* /index.html 200

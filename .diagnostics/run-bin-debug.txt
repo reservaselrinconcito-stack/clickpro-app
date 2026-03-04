@@ -1,0 +1,1 @@
+[2026-02-26T20:56:38Z INFO  contikpro_core_lib] [ContikPro] Schema version: 1 (target: 1)

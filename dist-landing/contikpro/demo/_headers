@@ -1,0 +1,22 @@
+
+# Bloquear cache de index.html para que siempre se consulte si hay version nueva
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Cache agresiva para assets con hash (Vite los nombra asi)
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Descargas binarias — forzar descarga (no preview), cache 24h
+/downloads/*.dmg
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment
+  Cache-Control: public, max-age=86400
+
+/downloads/*.zip
+  Content-Type: application/zip
+  Content-Disposition: attachment
+  Cache-Control: public, max-age=86400

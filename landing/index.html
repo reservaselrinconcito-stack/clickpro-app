@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTIKPRO CORE | Software de gestión empresarial local y profesional</title>
+    <meta name="description"
+        content="Gestión empresarial profesional 100% local. Sin suscripciones forzadas, con control total de tus datos. Construido para el alto rendimiento y la seguridad.">
+
+    <!-- Fuentes: Inter para un look corporativo moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Paleta Neutra Profesional */
+            --primary-bg: #f8fafc;
+            --secondary-bg: #ffffff;
+            --surface-bg: #f1f5f9;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --slate-200: #e2e8f0;
+            --accent-blue: #3b82f6;
+            --accent-dark: #2563eb;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--slate-900);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Utilidades */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-slate-500 {
+            color: var(--slate-500);
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--slate-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4.5rem;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.025em;
+            color: var(--slate-900);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate-600);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--slate-900);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--slate-900);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--slate-800);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--slate-900);
+            border-color: var(--slate-200);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--surface-bg);
+            border-color: var(--slate-300);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            flex: 1;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.05em;
+            color: var(--slate-900);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--slate-600);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Abstract Background Decor */
+        .bg-blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+            top: -100px;
+            right: -200px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Philosphy Section */
+        .philosophy {
+            background-color: white;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .card {
+            padding: 2.5rem;
+            background: white;
+            border-radius: 1rem;
+            border: 1px solid var(--slate-200);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--slate-300);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            background-color: var(--surface-bg);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--slate-900);
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--surface-bg);
+            color: var(--slate-600);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        /* Architecture Section */
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .arch-list {
+            list-style: none;
+        }
+
+        .arch-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .arch-item-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--accent-blue);
+        }
+
+        .arch-item-text h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .arch-item-text p {
+            color: var(--slate-600);
+            font-size: 0.95rem;
+        }
+
+        /* Verticals Section */
+        .verticals-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .vertical-tag {
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px dashed var(--slate-300);
+            color: var(--slate-500);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 500;
+            background-color: var(--surface-bg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--slate-900);
+            color: white;
+            padding: 4rem 0 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-desc {
+            color: var(--slate-400);
+            max-width: 300px;
+            font-size: 0.9rem;
+        }
+
+        .footer-heading {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            color: var(--slate-400);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--slate-400);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid var(--slate-800);
+            text-align: center;
+            color: var(--slate-500);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-subtitle {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .architecture-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .verticals-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <polyline points="9 3 9 21"></polyline>
+                </svg>
+                CONTIKPRO <span style="font-weight: 400; color: var(--slate-500);">CORE</span>
+            </a>
+            <div class="nav-links">
+                <a href="#filosofia">Filosofía</a>
+                <a href="#arquitectura">Arquitectura</a>
+                <a href="#publico">Audiencia</a>
+                <a href="#verticales">Verticales</a>
+                <a href="/downloads/ContikProCore-2.0.0-mac-x64.dmg" class="btn btn-primary">Descargar Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="container hero">
+            <div class="hero-content">
+                <span class="section-tag"
+                    style="background-color: rgba(59, 130, 246, 0.1); color: var(--accent-blue);">Versión 2.0
+                    Estable</span>
+                <h1 class="hero-title">CONTIKPRO CORE</h1>
+                <p class="hero-subtitle">
+                    Software de gestión empresarial local y profesional diseñado para la máxima estabilidad y control
+                    total de sus datos.
+                </p>
+                <div class="hero-actions">
+                    <a href="/downloads/ContikProCore-2.0.0-mac-x64.dmg" class="btn btn-primary">
+                        Descargar demo
+                        <svg style="margin-left: 0.5rem;" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="#arquitectura" class="btn btn-secondary">Ver arquitectura</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="bg-blob"></div>
+                <!-- Imagen generada previamente -->
+                <img src="assets/hero.png" alt="CONTIKPRO CORE Interface Abstract">
+            </div>
+        </section>
+
+        <!-- Filosofía Section -->
+        <section id="filosofia" class="philosophy">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <span class="section-tag">Nuestra Filosofía</span>
+                    <h2 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem;">El valor de lo local en un
+                        mundo Cloud</h2>
+                    <p class="text-slate-500" style="max-width: 600px; margin: 0 auto;">Creemos que el software
+                        profesional debe ser una herramienta bajo el control absoluto de su dueño, no un servicio sujeto
+                        a terceros.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="mb-4 font-bold">Datos Propios</h3>
+                        <p class="text-slate-500">Sus datos residen exclusivamente en su infraestructura. Sin accesos
+                            externos no autorizados ni dependencias de conexión.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20"></path>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="mb-4 font-bold">Sin Suscripciones</h3>
+                        <p class="text-slate-500">Un modelo de licencia transparente. Software profesional sin cuotas
+                            mensuales obligatorias para acceder a sus propios datos.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="mb-4 font-bold">Control Total</h3>
+                        <p class="text-slate-500">Actualice cuando lo necesite. Organice sus flujos de trabajo sin que
+                            cambios externos afecten su operativa diaria.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arquitectura Section -->
+        <section id="arquitectura">
+            <div class="container">
+                <div class="architecture-grid">
+                    <div>
+                        <span class="section-tag">Especificaciones Técnicas</span>
+                        <h2 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 2rem;">Ingeniería de robustez
+                        </h2>
+
+                        <div class="arch-list">
+                            <div class="arch-item">
+                                <div class="arch-item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="arch-item-text">
+                                    <h3>Desktop Nativo (Tauri + Rust)</h3>
+                                    <p>Binarios optimizados para Windows, Mac y Linux con consumos de memoria mínimos.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="arch-item">
+                                <div class="arch-item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                    </svg>
+                                </div>
+                                <div class="arch-item-text">
+                                    <h3>Base de Datos SQLite</h3>
+                                    <p>Almacenamiento en archivos físicos de alto rendimiento, portables y fáciles de
+                                        gestionar.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-item">
+                                <div class="arch-item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </div>
+                                <div class="arch-item-text">
+                                    <h3>Sistema de Backups</h3>
+                                    <p>Herramientas integradas para exportación y seguridad de datos cumpliendo
+                                        normativas.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-item">
+                                <div class="arch-item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 5v14M5 12h14"></path>
+                                    </svg>
+                                </div>
+                                <div class="arch-item-text">
+                                    <h3>Núcleo Extensible</h3>
+                                    <p>Arquitectura modular preparada para conectar verticales empresariales sin tocar
+                                        el núcleo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        style="background-color: var(--slate-900); padding: 3rem; border-radius: 1.5rem; color: white;">
+                        <div style="font-family: monospace; font-size: 0.85rem; color: var(--slate-400);">
+                            <div style="color: #10b981;">// ContikPro Core Architecture</div>
+                            <div class="mb-2">const architecture = {</div>
+                            <div style="padding-left: 1.5rem;" class="mb-2">
+                                frontend: "React + TypeScript",<br>
+                                bridge: "Tauri (Rust Interop)",<br>
+                                database: "SQLite Local",<br>
+                                security: "Encrypted Filesystem",<br>
+                                deployment: "OS Native Binary"
+                            </div>
+                            <div>};</div>
+                            <div class="mt-8"
+                                style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.1);">
+                                <div style="font-weight: 700; color: white;">Log Analytics</div>
+                                <div style="font-size: 0.75rem; margin-top: 4px;">Performance: 98.4% Efficiency</div>
+                                <div style="font-size: 0.75rem;">Memory Leak Test: Passed</div>
+                                <div style="font-size: 0.75rem;">SQLite Sync: 0ms Latency</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Públic Section -->
+        <section id="publico" style="background-color: var(--slate-900); color: white;">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <span class="section-tag" style="background-color: rgba(255,255,255,0.1); color: white;">A quién nos
+                        dirigimos</span>
+                    <h2 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem;">Para quienes valoran la
+                        seriedad</h2>
+                </div>
+
+                <div class="grid-3">
+                    <div
+                        style="border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 1rem; background: rgba(255,255,255,0.02);">
+                        <h3 class="mb-4 font-bold" style="font-size: 1.25rem;">Empresas de Seguridad</h3>
+                        <p style="color: var(--slate-400);">Organizaciones que no pueden permitirse delegar la custodia
+                            de sus datos empresariales a nubes de terceros.</p>
+                    </div>
+                    <div
+                        style="border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 1rem; background: rgba(255,255,255,0.02);">
+                        <h3 class="mb-4 font-bold" style="font-size: 1.25rem;">Sectores Críticos</h3>
+                        <p style="color: var(--slate-400);">Profesionales que operan en entornos donde el acceso a
+                            internet no está garantizado pero la gestión sí debe estarlo.</p>
+                    </div>
+                    <div
+                        style="border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 1rem; background: rgba(255,255,255,0.02);">
+                        <h3 class="mb-4 font-bold" style="font-size: 1.25rem;">Equipos Pragáticos</h3>
+                        <p style="color: var(--slate-400);">Equipos que buscan software que funcione hoy y en 10 años,
+                            sin cambios inesperados de interfaz o de precio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Verticales Section -->
+        <section id="verticales" class="philosophy">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <span class="section-tag">Próximamente</span>
+                    <h2 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem;">Verticales Especializadas
+                    </h2>
+                    <p class="text-slate-500" style="max-width: 600px; margin: 0 auto;">El núcleo de ContikPro servirá
+                        como base para soluciones específicas de cada sector, manteniendo la misma filosofía de robustez
+                        local.</p>
+                </div>
+
+                <div class="verticalss-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div class="vertical-tag">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Obra y Construcción
+                    </div>
+                    <div class="vertical-tag">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                        </svg>
+                        Instalaciones Eléctricas
+                    </div>
+                    <div class="vertical-tag">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="6" cy="6" r="3"></circle>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                            <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                            <path d="M8.12 8.12L12 12"></path>
+                        </svg>
+                        Salones y Peluquerías
+                    </div>
+                    <div class="vertical-tag">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        Gestión Administrativa
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span class="footer-logo">CONTIKPRO <span
+                            style="font-weight: 400; color: var(--slate-500);">CORE</span></span>
+                    <p class="footer-desc">
+                        Infraestructura desktop para la gestión empresarial del futuro: sólida, privada e independiente
+                        del cloud.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Producto</h4>
+                    <ul class="footer-links">
+                        <li><a href="#filosofia">Filosofía</a></li>
+                        <li><a href="#arquitectura">Arquitectura</a></li>
+                        <li><a href="#verticales">Verticales</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Recursos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentación</a></li>
+                        <li><a href="#">Guía de SQLite</a></li>
+                        <li><a href="#">API Local</a></li>
+                        <li><a href="#">Soporte Técnico</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Licencia</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 CONTIKPRO CORE. Todos los derechos reservados. Diseñado para la soberanía del dato.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

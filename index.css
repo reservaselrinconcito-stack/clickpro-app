@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@config "./tailwind.config.js";
+
+:root {
+  --accent-blue: #3B82F6;
+  --accent-blue-soft: rgba(59, 130, 246, 0.12);
+  --accent-blue-glow: rgba(59, 130, 246, 0.40);
+}

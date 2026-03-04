@@ -1,0 +1,13 @@
+# Cloudflare Pages — ContikPro Core Web Demo
+# Deploy with: npx wrangler pages deploy dist --project-name contikpro-core
+#
+# Or connect the GitHub repo to Cloudflare Pages with:
+#   Build command:  npm run build:web
+#   Build output:   dist
+#   Node version:   20
+
+name = "contikpro-core"
+compatibility_date = "2024-01-01"
+
+[site]
+bucket = "./dist-web"

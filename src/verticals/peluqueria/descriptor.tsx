@@ -8,13 +8,13 @@ export const peluqueriaVertical: VerticalDescriptor = {
   id: 'peluqueria',
   label: 'ClickPro',
   routes: [
-    { path: '/calendar', element: <CalendarPage />, wrapInLayout: true },
-    { path: '/inbox', element: <InboxPage />, wrapInLayout: true },
-    { path: '/web-editor', element: <WebEditorPage />, wrapInLayout: true },
+    { path: '/peluqueria/calendar', element: <CalendarPage />, wrapInLayout: true },
+    { path: '/peluqueria/inbox', element: <InboxPage />, wrapInLayout: true },
+    { path: '/peluqueria/web-editor', element: <WebEditorPage />, wrapInLayout: true },
   ],
   menu: [
-    { to: '/calendar', label: 'Calendario', icon: 'Calendar' as any },
-    { to: '/inbox', label: 'Buzón', icon: 'Inbox' as any },
-    { to: '/web-editor', label: 'Editor web', icon: 'Layout' as any },
+    { to: '/peluqueria/calendar', label: 'Calendario', icon: 'Calendar' as any },
+    { to: '/peluqueria/inbox', label: 'Buzón', icon: 'Inbox' as any },
+    { to: '/peluqueria/web-editor', label: 'Editor web', icon: 'Layout' as any },
   ],
 };

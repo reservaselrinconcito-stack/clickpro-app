@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" fill="none">
+  <g transform="translate(4,3) scale(0.5)">
+    <ellipse cx="50" cy="50" rx="46" ry="19" stroke="#111" stroke-width="2" stroke-dasharray="7 4" opacity=".4" transform="rotate(-22 50 50)"/>
+    <circle cx="50" cy="50" r="16" fill="#111"/>
+    <circle cx="50" cy="50" r="5" fill="white" opacity=".5"/>
+  </g>
+  <text x="58" y="32" font-family="'Trebuchet MS',sans-serif" font-size="20" font-weight="700" letter-spacing="2.5" fill="#111">OPTIMUS</text>
+  <text x="59" y="46" font-family="'Trebuchet MS',sans-serif" font-size="8" letter-spacing="4" fill="#444">HUB</text>
+</svg>

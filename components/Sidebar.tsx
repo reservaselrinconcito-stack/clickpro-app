@@ -5,9 +5,17 @@ import {
   Upload, Users, Truck, Receipt, FileCode, Package, X, Menu, Database
 } from 'lucide-react';
 import { IS_TAURI } from '@/core/environment';
+import { extendMenu } from '@/core/vertical-engine';
+import { Calendar, Inbox as InboxIcon, Layout } from 'lucide-react';
+
+const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  Calendar,
+  Inbox: InboxIcon,
+  Layout,
+};
 
 const Sidebar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: () => void }) => {
-  const navItems = [
+  const coreNavItems = [
     { path: '/', icon: LayoutDashboard, label: 'Dashboard' },
     { path: '/contacts', icon: Users, label: 'Clientes' },
     { path: '/suppliers', icon: Truck, label: 'Proveedores' },
@@ -20,6 +28,8 @@ const Sidebar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: ()
     { path: '/import', icon: Upload, label: 'Importar' },
     { path: '/settings', icon: Settings, label: 'Configuración' },
   ];
+
+  const verticalItems = extendMenu();
 
   return (
     <>
@@ -59,7 +69,7 @@ const Sidebar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: ()
         {/* Nav */}
         <nav className="flex-1 px-3 py-3 overflow-y-auto">
           <ul className="space-y-0.5">
-            {navItems.map((item) => (
+            {coreNavItems.map((item) => (
               <li key={item.path}>
                 <NavLink
                   to={item.path}
@@ -79,6 +89,43 @@ const Sidebar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: ()
               </li>
             ))}
           </ul>
+
+          {verticalItems.length > 0 && (
+            <>
+              <div className="mt-4 mb-2 px-3 flex items-center gap-2">
+                <div className="flex-1 h-px bg-gray-100" />
+                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
+                  Peluquería
+                </span>
+                <div className="flex-1 h-px bg-gray-100" />
+              </div>
+              <ul className="space-y-0.5">
+                {verticalItems.map((item) => {
+                  const iconStr = typeof item.icon === 'string' ? item.icon : '';
+                  const IconComponent = iconStr ? iconMap[iconStr] : undefined;
+                  const to = (item as any).to ?? item.path;
+                  return (
+                    <li key={to}>
+                      <NavLink
+                        to={to}
+                        className={({ isActive }) =>
+                          `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                            isActive
+                              ? 'bg-blue-50 text-[var(--accent-blue)]'
+                              : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                          }`
+                        }
+                        onClick={() => window.innerWidth < 768 && toggleSidebar()}
+                      >
+                        {IconComponent && <IconComponent size={17} className="flex-shrink-0" />}
+                        <span>{item.label}</span>
+                      </NavLink>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
         </nav>
 
         {/* Footer */}

@@ -1,0 +1,3 @@
+# Los DMGs se generan con: npm run release:mac
+# y se suben a Cloudflare Pages vía: npm run publish:landing
+# Esta carpeta NO se commitea con binarios (ver .gitignore)

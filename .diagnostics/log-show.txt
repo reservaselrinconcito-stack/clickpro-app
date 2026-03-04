@@ -1,0 +1,100 @@
+2026-02-26 21:45:55.869 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x34800d220 - [PID=58983, throttler=0x34801d9d8] ProcessThrottler::Activity::invalidate: Ending background activity / 'Page Load'
+2026-02-26 21:46:08.555 A  contikpro-core[58952:a1b71] (CoreFoundation) Loading Preferences From User CFPrefsD
+2026-02-26 21:46:08.730 A  contikpro-core[58952:a1b71] (AppKit) _initBridgeAndStuff
+2026-02-26 21:46:08.731 Df contikpro-core[58952:a1b71] [com.apple.xpc:connection] [0x7fdeac8c0830] activating connection: mach=false listener=false peer=false name=com.apple.ViewBridgeAuxiliary
+2026-02-26 21:46:08.731 Df contikpro-core[58952:a1b71] [com.apple.xpc:connection] [0x7fdeac8c1030] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-02-26 21:46:08.734 Df contikpro-core[58952:a1b71] [com.apple.AppKit:OpenSavePanels] Advance to configuration phase.
+2026-02-26 21:46:08.734 Df contikpro-core[58952:a1c04] [com.apple.xpc:connection] [0x7fdeac98a230] activating connection: mach=false listener=false peer=false name=com.apple.appkit.xpc.openAndSavePanelService
+2026-02-26 21:46:08.897 Df contikpro-core[58952:a1c04] [com.apple.xpc:connection] [0x7fdeac98a230] invalidated after the last release of the connection object
+2026-02-26 21:46:08.898 Df contikpro-core[58952:a1b71] [com.apple.xpc:connection] [0x7fdeabfe9e80] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-02-26 21:46:09.924 Df contikpro-core[58952:a1b71] [com.apple.xpc:connection] [0x7fdeac8c0830] invalidated after the last release of the connection object
+2026-02-26 21:46:09.925 A  contikpro-core[58952:a1b71] (AppKit) beginServicePanel
+2026-02-26 21:46:09.925 Df contikpro-core[58952:a1b71] [com.apple.AppKit:OpenSavePanels] Advance to run phase.
+2026-02-26 21:46:09.991 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] order window front conditionally: e7a related: 0
+2026-02-26 21:46:09.991 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] parent TaoWindow 0x7fdeac950080 (e7a) remove NSOpenPanel 0x7fdeac8bddd0 (e7f) from group
+2026-02-26 21:46:09.991 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] parent TaoWindow 0x7fdeac950080 (e7a) add NSOpenPanel 0x7fdeac8bddd0 (e7f) to group
+2026-02-26 21:46:09.994 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] order window: e7f op: 1 relative: e7a related: 0
+2026-02-26 21:46:10.256 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] parent TaoWindow 0x7fdeac950080 (e7a) remove NSOpenPanel 0x7fdeac8bddd0 (e7f) from group
+2026-02-26 21:46:10.256 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] parent TaoWindow 0x7fdeac950080 (e7a) add NSOpenPanel 0x7fdeac8bddd0 (e7f) to group
+2026-02-26 21:46:10.257 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] order window: e7f op: 1 relative: e7a related: 0
+2026-02-26 21:46:23.924 A  contikpro-core[59004:a1e4f] (libsystem_info.dylib) Retrieve User by ID
+2026-02-26 21:46:23.925 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45d71ccc0] activating connection: mach=true listener=false peer=false name=com.apple.cfprefsd.daemon
+2026-02-26 21:46:23.925 Df contikpro-core[59004:a1e56] [com.apple.xpc:connection] [0x7ff45e013fe0] activating connection: mach=true listener=false peer=false name=com.apple.cfprefsd.agent
+2026-02-26 21:46:23.928 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e10b690] activating connection: mach=true listener=false peer=false name=com.apple.coreservices.launchservicesd
+2026-02-26 21:46:23.928 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45d71e450] activating connection: mach=true listener=false peer=false name=com.apple.pasteboard.1
+2026-02-26 21:46:23.929 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e10b980] activating connection: mach=true listener=false peer=false name=com.apple.distributed_notifications@Uv3
+2026-02-26 21:46:23.931 A  contikpro-core[59004:a1e4f] (TCC) TCCAccessRequest() IPC
+2026-02-26 21:46:23.931 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e2280c0] activating connection: mach=true listener=false peer=false name=com.apple.tccd.system
+2026-02-26 21:46:23.956 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e2280c0] invalidated after the last release of the connection object
+2026-02-26 21:46:23.956 Df contikpro-core[59004:a1e4f] [com.apple.SkyLight:default] server port 0x00003b07, session port 0x00003b07
+2026-02-26 21:46:23.981 Df contikpro-core[59004:a1e4f] [com.apple.SkyLight:default] New connection 0xc70b7 main
+2026-02-26 21:46:23.985 Df contikpro-core[59004:a1e4f] [com.apple.processmanager:front-35286506] CHECKIN: pid=59004
+2026-02-26 21:46:23.990 Df contikpro-core[59004:a1e4f] [com.apple.processmanager:front-35286506] CHECKEDIN: pid=59004 asn=0x0-0x23a23a foreground=1
+2026-02-26 21:46:23.990 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45d723420] activating connection: mach=true listener=false peer=false name=com.apple.lsd.modifydb
+2026-02-26 21:46:23.991 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e01b9d0] activating connection: mach=false listener=true peer=false name=(anonymous)
+2026-02-26 21:46:23.991 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e01b9d0] Channel could not return listener port.
+2026-02-26 21:46:23.991 Df contikpro-core[59004:a1e4f] [com.apple.processmanager:front-35286506] FRONTLOGGING: version 1
+2026-02-26 21:46:23.991 Df contikpro-core[59004:a1e4f] [com.apple.processmanager:front-35286506] Registered, pid=59004 ASN=0x0,0x23a23a
+2026-02-26 21:46:23.991 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e01c6a0] activating connection: mach=true listener=false peer=false name=com.apple.analyticsd
+2026-02-26 21:46:23.993 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e01b9d0] Channel could not return listener port.
+2026-02-26 21:46:23.993 Df contikpro-core[59004:a1e4f] [com.apple.processmanager:front-35286506] BringForward: pid=59004 asn=0x0-0x23a23a bringForward=0 foreground=1 uiElement=0 launchedByLS=0 modifiersCount=0 allDisabled=0
+2026-02-26 21:46:23.994 Df contikpro-core[59004:a1e4f] [com.apple.AppKit:Appearance] Current system appearance, (HLTB: 2), (SLS: 1)
+2026-02-26 21:46:23.997 Df contikpro-core[59004:a1e4f] (libMobileGestalt.dylib) No persisted cache on this platform.
+2026-02-26 21:46:23.998 Df contikpro-core[59004:a1e4f] (libMobileGestalt.dylib) Failed to copy the SysCfgDict MG key with error: 0
+2026-02-26 21:46:23.999 Df contikpro-core[59004:a1e4f] [com.apple.AppKit:Appearance] Current system appearance, (HLTB: 2), (SLS: 1)
+2026-02-26 21:46:24.000 Df contikpro-core[59004:a1e4f] [com.apple.AppKit:Appearance] Post-registration system appearance: (HLTB: 2)
+2026-02-26 21:46:24.001 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e22eb50] activating connection: mach=true listener=false peer=false name=com.apple.lsd.mapdb
+2026-02-26 21:46:24.004 Df contikpro-core[59004:a1e57] [com.apple.xpc:connection] [0x7ff45e232440] activating connection: mach=false listener=false peer=true name=com.apple.xpc.anonymous.0x7ff45e01b9d0.peer[134].0x7ff45e232440
+2026-02-26 21:46:24.009 Df contikpro-core[59004:a1e56] [com.apple.CoreAnalytics:client] Received configuration update from daemon (initial)
+2026-02-26 21:46:24.013 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e01b9d0] Channel could not return listener port.
+2026-02-26 21:46:24.017 Df contikpro-core[59004:a1e4f] [com.apple.xpc:connection] [0x7ff45e01b9d0] Channel could not return listener port.
+2026-02-26 21:46:24.965 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSwapping] 0x34805bc40 - [PID=0] WebProcessCache::setApplicationIsActive: (isActive=0)
+2026-02-26 21:46:25.068 A  contikpro-core[58952:a1df4] (RunningBoardServices) didChangeInheritances
+2026-02-26 21:46:26.513 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] order window front conditionally: e7f related: 0
+2026-02-26 21:46:26.513 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] order window: e7a op: -1 relative: e7f related: 0
+2026-02-26 21:46:26.514 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSwapping] 0x34805bc40 - [PID=0] WebProcessCache::setApplicationIsActive: (isActive=1)
+2026-02-26 21:46:26.541 A  contikpro-core[58952:a1ba5] (RunningBoardServices) didChangeInheritances
+2026-02-26 21:46:26.541 Df contikpro-core[58952:a1ba5] [com.apple.runningboard:connection] Gained inheritances: {(
+    <RBSInheritance| environment:(none) name:com.apple.launchservices.userfacing origID:164-134-30135 0>,
+    <RBSInheritance| environment:(none) name:com.apple.launchservices.userfacing origID:164-134-30135 0>
+)}
+2026-02-26 21:46:26.647 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] order window front conditionally: e7a related: 0
+2026-02-26 21:46:26.649 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] order window front conditionally: e7a related: 0
+2026-02-26 21:46:26.909 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] parent TaoWindow 0x7fdeac950080 (e7a) remove NSOpenPanel 0x7fdeac8bddd0 (e7f) from group
+2026-02-26 21:46:26.911 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] order window: e7f op: 0 relative: 0 related: 0
+2026-02-26 21:46:26.915 Df contikpro-core[58952:a1b71] [com.apple.xpc:connection] [0x7fdeac8c1030] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-02-26 21:46:26.915 Df contikpro-core[58952:a1b71] [com.apple.xpc:connection] [0x7fdeabfe9e80] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-02-26 21:46:26.979 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Loading] 0x7fdeae06a420 - [pageProxyID=8, webPageID=9, PID=58983] WebPageProxy::didNavigateWithNavigationDataShared:
+2026-02-26 21:46:26.979 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Loading] 0x7fdeae06a420 - [pageProxyID=8, webPageID=9, PID=58983] WebPageProxy::didSameDocumentNavigationForFrameViaJSHistoryAPI: frameID=2, isMainFrame=1, type=2
+2026-02-26 21:46:37.912 A  contikpro-core[58952:a1b71] (AppKit) trackMouse send action on mouseUp
+2026-02-26 21:46:37.912 A  contikpro-core[58952:a1b71] (AppKit) sendActionFrom:
+2026-02-26 21:46:37.912 A  contikpro-core[58952:a1b71] (AppKit) sendAction:
+2026-02-26 21:46:37.912 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] window TaoWindow e7a windowShouldClose: prevented close
+2026-02-26 21:46:37.913 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] window TaoWindow e7a finishing close
+2026-02-26 21:46:37.939 Df contikpro-core[58952:a1b71] [com.apple.AppKit:Window] order window: e7a op: 0 relative: 0 related: 0
+2026-02-26 21:46:37.946 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Loading] 0x7fdeae06a420 - [pageProxyID=8, webPageID=9, PID=58983] WebPageProxy::close:
+2026-02-26 21:46:37.946 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Media] VideoPresentationManagerProxy::invalidate(9434422C)
+2026-02-26 21:46:37.946 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Fullscreen] VideoPresentationManagerProxy::invalidate(9434422C)
+2026-02-26 21:46:37.946 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Fullscreen] VideoPresentationManagerProxy::~VideoPresentationManagerProxy(9434422C)
+2026-02-26 21:46:37.946 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Fullscreen] VideoPresentationManagerProxy::invalidate(9434422C)
+2026-02-26 21:46:37.946 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Media] VideoPresentationManagerProxy::~PlaybackSessionManagerProxy(9434422C)
+2026-02-26 21:46:37.946 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Process] 0x34801d7c0 - [PID=58983] WebProcessProxy::removeWebPage: webPage=0x7fdeae06a420, pageProxyID=8, webPageID=9
+2026-02-26 21:46:37.946 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Process] 0x34801d7c0 - [PID=58983] WebProcessProxy::canTerminateAuxiliaryProcess: returns false (pageCount=0, provisionalPageCount=0, suspendedPageCount=0, m_isInProcessCache=0, m_shutdownPreventingScopeCounter=1)
+2026-02-26 21:46:37.946 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x34800df00 - [PID=58983, throttler=0x34801d9d8] ProcessThrottler::Activity::invalidate: Ending foreground activity / 'View is visible'
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x34801d9d8 - [PID=58983] ProcessThrottler::sendPrepareToSuspendIPC: Sending PrepareToSuspend(1, isSuspensionImminent=0) IPC, remainingRunTime=0.000000s
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x34801d7c0 - [PID=58983] WebProcessProxy::sendPrepareToSuspend: isSuspensionImminent=0
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x34801d9d8 - [PID=58983] ProcessThrottler::setThrottleState: Updating process assertion type to 1 (foregroundActivities=0, backgroundActivities=0)
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x34801d7c0 - [PID=58983] WebProcessProxy::didChangeThrottleState: type=1
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x34801d7c0 - [PID=58983] WebProcessProxy::didChangeThrottleState(Background) Taking background assertion for network process
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x348040240 - [PID=58984, throttler=0x34802dbc0] ProcessThrottler::Activity::Activity: Starting background activity / 'Networking for background view(s)'
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1df4] [com.apple.WebKit:ProcessSuspension] 0x3480246c0 - ProcessAssertion::acquireSync Trying to take RBS assertion 'WebProcess Background Assertion' for process with PID=58983
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x34800dc40 - [PID=58984, throttler=0x34802dbc0] ProcessThrottler::Activity::invalidate: Ending foreground activity / 'Networking for foreground view(s)'
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x348040260 - [PID=58987, throttler=0x3480d4b18] ProcessThrottler::Activity::Activity: Starting background activity / 'GPU for background view(s)'
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1b71] [com.apple.WebKit:ProcessSuspension] 0x34800f240 - [PID=58987, throttler=0x3480d4b18] ProcessThrottler::Activity::invalidate: Ending foreground activity / 'GPU for foreground view(s)'
+2026-02-26 21:46:37.948 Df contikpro-core[58952:a1b71] [com.apple.WebKit:Loading] 0x7fdeae06a420 - [pageProxyID=8, webPageID=9, PID=58983] WebPageProxy::destructor:
+2026-02-26 21:46:37.949 Df contikpro-core[58952:a1b71] [com.apple.CoreAnalytics:client] Entering exit handler.
+2026-02-26 21:46:37.949 Df contikpro-core[58952:a1b71] [com.apple.CoreAnalytics:client] Queueing exit procedure onto XPC queue. Any further messages sent will be discarded. activeSendTransactions=0
+2026-02-26 21:46:37.949 Df contikpro-core[58952:a1df4] [com.apple.WebKit:ProcessSuspension] 0x3480246c0 - ProcessAssertion::acquireSync Successfully took RBS assertion 'WebProcess Background Assertion' for process with PID=58983
+2026-02-26 21:46:37.949 Df contikpro-core[58952:a1df4] [com.apple.CoreAnalytics:client] Cancelling XPC connection. Any further reply handler invocations will not retry messages
+2026-02-26 21:46:37.949 Df contikpro-core[58952:a1df4] [com.apple.xpc:connection] [0x7fdeaca0ebd0] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-02-26 21:46:37.949 Df contikpro-core[58952:a1b71] [com.apple.CoreAnalytics:client] Exiting exit handler.

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56" fill="none">
+  <g transform="translate(4,2) scale(0.52)">
+    <path d="M50 16 L84 43 L84 86 L16 86 L16 43 Z" fill="none" stroke="#111" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M10 46 L50 16 L90 46" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="70" cy="36" r="14" fill="#111"/>
+    <path d="M63 36.5 L68 42 L78 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="62" y="30" font-family="'Trebuchet MS',sans-serif" font-size="18" font-weight="700" fill="#111">RentikPro</text>
+  <text x="63" y="46" font-family="'Trebuchet MS',sans-serif" font-size="8.5" letter-spacing="2" fill="#555">ALQUILERES · CHECK-IN</text>
+</svg>
